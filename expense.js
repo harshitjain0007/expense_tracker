@@ -1,5 +1,11 @@
 let count = 0;
 let form = document.querySelector("form");
+
+
+let tbody = document.querySelector("tbody");
+let tableHeaders = document.querySelector("thead");
+tableHeaders.style.display = "none"; 
+
 form.addEventListener("submit", function(event) {
   event.preventDefault();
 
@@ -21,6 +27,10 @@ else{
   row.insertCell(3).innerText = category;
   row.insertCell(4).innerText = new Date().toLocaleDateString();
 
+ if (count === 1) {
+      tableHeaders.style.display = "table-header-group";
+    }
+
   document.getElementById("expenseAmount").value = "";
   document.getElementById("expenseDetail").value = "";
   document.getElementById("expenseCategory").value = "";
@@ -29,20 +39,17 @@ else{
 
 let filterdata = document.getElementById("filterByCategory");
 
-filterdata.addEventListener("change", function(){
+filterdata.addEventListener("change", function()
+{
 let selectcategory = this.value;
 let rowdata = document.querySelectorAll("tbody tr")
 
 rowdata.forEach(function(row){
 let rowcategory = row.cells[3].innerText;
 
-if (selectcategory === "" || rowcategory=== selectcategory){
+if (selectcategory === "" || rowcategory=== selectcategory){row.style.display = "";}
+else {row.style.display = "none";}
 
-row.style.display = "";}
-else {
-  row.style.display = "none";
+})
 
-}
-
-}
 })
