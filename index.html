@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="Exp_form">
+    <div id="wrapper">
+      <div id="expenseTracker">
+        <h2>Expense Tracker</h2>
+        <div id="inputs">
+          <form class="form-css" action="">
+            <input
+              type="text"
+              placeholder="Enter Expense Amount"
+              id="expenseAmount"
+            />
+            <input
+              type="text"
+              placeholder="Enter Expense Details"
+              id="expenseDetail"
+            />
+            <select name="" id="expenseCategory">
+              <option value="">Select Category</option>
+              <option value="fuel">Fuel</option>
+              <option value="shopping">Shopping</option>
+              <option value="medical">Medical</option>
+              <option value="other">Other</option>
+            </select>
+            <button type="submit">Add Expense</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="view">
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Amount</th>
+              <th>Details</th>
+              <th>Category</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <select name="" id="filterByCategory">
+          <option value="">Filter By Category</option>
+          <option value="fuel">Fuel</option>
+          <option value="shopping">Shopping</option>
+          <option value="medical">Medical</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+
+
+    <script src="expense.js"></script>
+  </body>
+</html>
